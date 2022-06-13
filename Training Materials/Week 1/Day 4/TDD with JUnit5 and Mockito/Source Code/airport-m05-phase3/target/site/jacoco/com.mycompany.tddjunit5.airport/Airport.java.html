@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Airport.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TDD</a> &gt; <a href="index.source.html" class="el_package">com.mycompany.tddjunit5.airport</a> &gt; <span class="el_source">Airport.java</span></div><h1>Airport.java</h1><pre class="source lang-java linenums">package com.mycompany.tddjunit5.airport;
+
+<span class="nc" id="L3">public class Airport {</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L6">        Flight economyFlight = new Flight(&quot;1&quot;, &quot;Economy&quot;);</span>
+<span class="nc" id="L7">        Flight businessFlight = new Flight(&quot;2&quot;, &quot;Business&quot;);</span>
+
+<span class="nc" id="L9">        Passenger john = new Passenger(&quot;John&quot;, true);</span>
+<span class="nc" id="L10">        Passenger mike = new Passenger(&quot;Mike&quot;, false);</span>
+
+<span class="nc" id="L12">        businessFlight.addPassenger(john);</span>
+<span class="nc" id="L13">        businessFlight.removePassenger(john);</span>
+<span class="nc" id="L14">        businessFlight.addPassenger(mike);</span>
+<span class="nc" id="L15">        economyFlight.addPassenger(mike);</span>
+
+<span class="nc" id="L17">        System.out.println(&quot;Business flight passengers list:&quot;);</span>
+<span class="nc bnc" id="L18" title="All 2 branches missed.">        for (Passenger passenger: businessFlight.getPassengersList()) {</span>
+<span class="nc" id="L19">            System.out.println(passenger.getName());</span>
+<span class="nc" id="L20">        }</span>
+
+<span class="nc" id="L22">        System.out.println(&quot;Economy flight passengers list:&quot;);</span>
+<span class="nc bnc" id="L23" title="All 2 branches missed.">        for (Passenger passenger: economyFlight.getPassengersList()) {</span>
+<span class="nc" id="L24">            System.out.println(passenger.getName());</span>
+<span class="nc" id="L25">        }</span>
+<span class="nc" id="L26">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
