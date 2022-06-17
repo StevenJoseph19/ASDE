@@ -3,6 +3,7 @@ target/*
 .classpath
 .project
 /target
+.idea
 .gradle
 .sts4-cache/
 .vscode/*
