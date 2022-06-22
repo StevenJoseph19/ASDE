@@ -7,6 +7,7 @@ SELECT CAST('Artwork' AS CHAR(7)) AS "NotPadded";
 SELECT 'Gill Bates'::VARCHAR(14) AS "SmallerNamesAreNotPadded";
 SELECT 'Zark Muckerberg'::VARCHAR(14) AS "LongerNameClipped";
 SELECT 'The quick brown fox jumps over the lazy dog.'::VARCHAR AS "UsingVARCHAR";
+SELECT 'The quick brown fox jumps over the lazy dog.'::TEXT AS "UsingTEXT";
 
 Numeric
 ==================
@@ -25,7 +26,6 @@ SELECT 1::BOOLEAN AS "TrueValue", 0::BOOLEAN AS "FalseValue",NULL::BOOL  AS "Unk
 Date/Time
 =================
 SELECT '2020, 4 July'::DATE AS "US Independence Day";
-SELECT '20200407'::DATE AS " US Independence Day";
 SELECT '20200407'::DATE AS " US Independence Day";
 SELECT '12:00:00.12345678'::TIME(2) AS "Noon with 2 micro-second precision";
 SELECT '00:00:00 IST'::TIME WITH TIME ZONE AS "Midnight as per Indian Standard Time";
