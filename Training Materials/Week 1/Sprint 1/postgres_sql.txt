@@ -32,4 +32,30 @@ VALUES
 	;
 	
 SELECT * FROM employee;
+
+=============================================================================
+DROP Table LOGIN;
+
+CREATE TABLE LOGIN
+(
+    ID SERIAL,
+    USERNAME VARCHAR (50) NOT NULL,
+    PASSWORD VARCHAR (50) NOT NULL,
+    EMPLOYEE_ID INT NOT NULL,
+    ROLE CHAR (1)NOT NULL,
+    PRIMARY KEY (ID),
+    CONSTRAINT fk_employee
+      FOREIGN KEY(EMPLOYEE_ID) 
+	  REFERENCES EMPLOYEE(ID)
+);
+
+INSERT INTO LOGIN (
+	USERNAME,
+   	PASSWORD,
+	EMPLOYEE_ID,
+    ROLE)
+VALUES
+    ('metwo', 'password',2,'A');
+    
 	
+SELECT * FROM login;
