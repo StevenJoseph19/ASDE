@@ -1,0 +1,48 @@
+db.animals.find({info:{type:'bird',canFly:true}}, {name:1});
+db.animals.find({info:{canFly:true, type:'bird'}}, {name:1});
+db.animals.find({info:{type:'bird'}}, {name:1});
+db.animals.find({"info.canFly":true, "info.type":'bird'}}, {name:1});
+db.animals.find({"info.canFly":true, "info.type":'bird'}, {name:1});
+
+
+db.animals.find({"info.canFly":false'}, {name:1});
+
+db.animals.find({"info.canFly":null}, {name:1});
+
+db.animals.find({_id:4}).pretty();
+db.animals.find({"info.canFly":{$exists:true}}, {name:1});
+
+db.animals.find({"info.type":'bird',tags:'cute'}, {name:1});
+
+db.animals.find({_id:1}, {_id:1});
+db.animals.find({_id:1}, {_id:1,name:1});
+db.animals.find({_id:1}, {_id:0,name:0, info:0});
+db.animals.find({_id:1}, {name:1, info:1});
+db.animals.find({_id:1}, {_id:0,name:1,info:1});
+db.animals.find({_id:1}, {_id:0,name:1,info:0});
+
+var c = db.animals.find({},{name:1})
+c.size
+c.size()
+c.hasNext()
+c.forEach(function(d){print(d.name)})
+
+
+db.animals.find({},{name:1}).sort({name:1})
+db.animals.find({},{name:1,"info.type":1}).sort({"info.type":1})
+db.animals.find({},{name:1,"info.type":1}).sort({"info.type":1,"name":-1})
+
+db.animals.find({},{_id:1}).sort({_id:-1}).limit(3)
+db.animals.find({},{_id:1}).sort({_id:-1}).skip(1).limit(2)
+
+db.animals.findOne({_id:1})
+
+
+
+
+
+
+
+
+
+

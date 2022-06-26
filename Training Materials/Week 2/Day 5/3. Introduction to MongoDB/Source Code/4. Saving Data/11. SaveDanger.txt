@@ -1,0 +1,12 @@
+db.a.save({_id:1, x:10});
+var doc = db.a.findOne({_id:1});
+doc.x = doc.x + 1;
+db.a.save(doc);
+
+***********************************************
+db.a.save({_id:1, x:10, y:3});
+db.a.find()
+
+
+db.a.save(doc);
+db.a.find()

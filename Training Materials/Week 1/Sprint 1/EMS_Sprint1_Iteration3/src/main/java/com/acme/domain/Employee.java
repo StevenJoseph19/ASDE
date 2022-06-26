@@ -106,7 +106,7 @@ public class Employee implements Serializable {
     }
 
     public  Employee extractUserFromResultSet(ResultSet resultSet) throws SQLException {
-        Employee employee = new Employee();
+
 
         int id = resultSet.getInt("ID");
         String name = resultSet.getString("NAME");

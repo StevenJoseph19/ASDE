@@ -1,0 +1,8 @@
+> db.a.save({_id:1, Naem: 'bob'})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.a.find()
+{ "_id" : 1, "Naem" : "bob" }
+> db.a.update({_id:1},{$rename:{'Naem':'Name'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.a.find()
+{ "_id" : 1, "Name" : "bob" }

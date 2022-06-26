@@ -1,0 +1,2 @@
+ db.user.insert({_id:"bob@bob.bob", Name: "Bob", Address:{ Street: '123 Main', City:'Paris'}, Music:['Blues', 'Alt']})
+ db.user.insert({ _id:"meg@meg.meg", Name: "Meg", Address:{ Cruise: 'Fun', Ship:'SS Ahoy', Port: 'Marina'}, Music:['Blues', 'Alt'],Logins:[{ip:123, t: ISODate("2012-11-10")}]})

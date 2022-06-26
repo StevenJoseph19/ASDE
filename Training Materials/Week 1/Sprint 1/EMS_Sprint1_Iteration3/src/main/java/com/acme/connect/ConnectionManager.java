@@ -6,11 +6,11 @@ import java.sql.SQLException;
 
 public class ConnectionManager {
     private static String url = "jdbc:postgresql://127.0.0.1:5432/EMS";
-//    private static String driverName = "com.mysql.jdbc.Driver";
+
     private static String username = "postgres";
     private static String password = "password";
     private static Connection con;
-//    private static String urlstring;
+
 
     public static Connection getConnection() {
 

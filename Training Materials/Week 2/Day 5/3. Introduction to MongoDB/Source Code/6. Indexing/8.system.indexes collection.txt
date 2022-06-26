@@ -1,0 +1,10 @@
+> db
+test
+> db.animals.find({name:'cat'})
+{ "_id" : 1, "name" : "cat", "tags" : [ "land", "cute" ], "info" : { "type" : "mammal", "color" : "red" } }
+> db.system.indexes.find({ns:'test.animals'},{key:1}) // Seems to be deprecated.
+> use test
+switched to db test
+> db.animals.getIndexes()
+[ { "v" : 2, "key" : { "_id" : 1 }, "name" : "_id_" } ]
+>

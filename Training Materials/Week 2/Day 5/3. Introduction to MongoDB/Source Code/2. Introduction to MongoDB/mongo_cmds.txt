@@ -1,0 +1,8 @@
+mongod -f C:\MyData\mongod.conf
+db.foo.save({_id:1, value: 'hello world'})
+db.foo.find()
+db.setSlaveOk()
+
+==========================================
+To restart PRIMARY
+start "a" mongod --dbpath C:/MyData/db1 --port 30000 --replSet "demo"

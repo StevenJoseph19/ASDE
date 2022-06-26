@@ -1,0 +1,43 @@
+> db.a.save({_id:1, things:"Hello"})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.a.update({_id:1},{$pop:{things:1}})
+WriteResult({
+        "nMatched" : 0,
+        "nUpserted" : 0,
+        "nModified" : 0,
+        "writeError" : {
+                "code" : 14,
+                "errmsg" : "Path 'things' contains an element of non-array type 'string'"
+        }
+})
+> db.a.update({_id:1},{$push:{things:1}})
+WriteResult({
+        "nMatched" : 0,
+        "nUpserted" : 0,
+        "nModified" : 0,
+        "writeError" : {
+                "code" : 2,
+                "errmsg" : "The field 'things' must be an array but is of type string in document {_id: 1.0}"
+        }
+})
+> db.a.update({_id:1},{$pull:{things:1}})
+WriteResult({
+        "nMatched" : 0,
+        "nUpserted" : 0,
+        "nModified" : 0,
+        "writeError" : {
+                "code" : 2,
+                "errmsg" : "Cannot apply $pull to a non-array value"
+        }
+})
+> db.a.update({_id:1},{$addToSet:{things:'two'}})
+WriteResult({
+        "nMatched" : 0,
+        "nUpserted" : 0,
+        "nModified" : 0,
+        "writeError" : {
+                "code" : 2,
+                "errmsg" : "Cannot apply $addToSet to non-array field. Field named 'things' has non-array type string"
+        }
+})
+>

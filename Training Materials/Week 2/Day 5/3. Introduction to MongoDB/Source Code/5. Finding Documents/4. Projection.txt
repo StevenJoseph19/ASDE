@@ -1,0 +1,14 @@
+var animals = {
+  _id: 1,
+  name: "cat",
+  tags : ["land" ,"cute"],
+  info : {
+      type: "mammal",
+      color: "red"
+    },
+};
+
+db.animals.save(animals);
+db.animals.find({_id:1});
+db.animals.find({_id:1},{_id:1});
+{ "_id" : 1 }

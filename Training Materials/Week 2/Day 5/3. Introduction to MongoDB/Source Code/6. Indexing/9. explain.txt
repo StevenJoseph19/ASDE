@@ -1,0 +1,86 @@
+db.animals.find({name:'cat'}).explain()
+
+NOTE
+Removed in 5.0
+db.collection.ensureIndex() has been replaced by db.collection.createIndex().
+
+> db.animals.createIndex({name:1})
+{
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 2,
+        "createdCollectionAutomatically" : false,
+        "ok" : 1
+}
+> db.animals.getIndexes()
+[
+        {
+                "v" : 2,
+                "key" : {
+                        "_id" : 1
+                },
+                "name" : "_id_"
+        },
+        {
+                "v" : 2,
+                "key" : {
+                        "name" : 1
+                },
+                "name" : "name_1"
+        }
+]
+
+db.animals.find({name:'cat'}).explain()
+
+db.animals.createIndex({name:1})
+
+db.animals.find({name:'cat',tags:'land'}).explain();
+
+db.animals.find({name:{$lt:'dog'}},{name:1})
+
+db.animals.find({name:{$lt:'donkey'}},{name:1})
+
+db.animals.find({name:{$lt:'donkey'},tags:'land'},{name:1}).explain()
+
+db.animals.dropIndex("name_1")
+
+db.animals.createIndex({"info.color":1})
+
+db.animals.find({"info.color":"red"},{name:1});
+
+
+db.animals.findOne()
+db.animals.createIndex({tags:1})
+db.animals.find({tags:"land"},{name:1});
+db.animals.find({tags:"ocean"}).sort({tags:1}).explain();
+db.animals.dropIndexes()
+db.animals.getIndexes()
+db.animals.createIndex({name:1},{unique:true})
+
+db.animals.getIndexes()
+db.animals.insert({name:'cat'})
+db.animals.count()
+db.animals.count({"info:color" : {$exists:true}})
+db.animals.createIndex({"info.color":1},{sparse:true})
+db.animals.find({"info.color":"red"},{name:1});
+db.animals.find({tags:'ocean'},{name:1}).sort({'info.color':1})
+
+db.animals.createIndex({tags:1, name:1})
+
+
+db.animals.find({name:'shark', tags:'ocean'}).explain()
+db.animals.find().sort({tags:1,name:1}).explain()
+db.animals.find({name:'cat'},{name:1})
+
+db.animals.find({name:'cat'},{_id:0,name:1}).explain()
+
+db.animals.createIndex({zzz:1})
+db.animals.getIndexes()
+
+
+
+
+
+
+
+
+

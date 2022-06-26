@@ -1,0 +1,15 @@
+> db.a.find()
+{ "_id" : 1, "things" : [ "one", "two", "three", "three", "four" ] }
+> db.a.update({_id:1},{$pull:{things:'three'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.a.find()
+{ "_id" : 1, "things" : [ "one", "two", "four" ] }
+> db.a.update({_id:1},{$addToSet:{things:'three'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.a.update({_id:1},{$addToSet:{things:'three'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 0 })
+> db.a.update({_id:1},{$addToSet:{things:'three'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 0 })
+> db.a.find()
+{ "_id" : 1, "things" : [ "one", "two", "four", "three" ] }
+>

@@ -1,0 +1,28 @@
+db.animals.save({ _id: 1, name: 'cat', tags:['land','cute'] ,info:{type:'mammal', color:'red' }})
+db.animals.save({ _id: 2, name: 'rabbit', tags:['land','cute'],info:{type:'mammal', color:'white' } })
+db.animals.save({ _id: 3, name: 'shark', tags:['ocean'] ,info:{type:'fish', color:'grey' }})
+db.animals.save({ _id: 4, name: 'dolphin', tags:['ocean','cute'] ,info:{type:'mammal', color:'grey', canFly: null }})
+db.animals.save({ _id: 5, name: 'penguin', tags:['land','ocean','cute'] ,info:{type:'bird', canFly:false }})
+db.animals.save({ _id: 6, name: 'duck', tags:['land','cute'], info: {type:'bird', canFly: true} })
+
+
+db.animals.find({_id:{$gt:5}}, {_id:1});
+db.animals.find({_id:{$lt:5}}, {_id:1});
+db.animals.find({_id:{$lte:5}}, {_id:1});
+db.animals.find({_id:{$gte:5}}, {_id:1});
+db.animals.find({_id:{$gt:2,$lt:4}}, {_id:1});
+db.animals.find({_id:{$gte:2,$lt:4}}, {_id:1});
+db.animals.find({_id:{$not:{$gt:2}}}, {_id:1});
+
+
+db.animals.find({_id:{$in:[1,3]}}, {_id:1});
+db.animals.find({_id:{$nin:[1,3]}}, {_id:1});
+
+db.animals.find({tags:'cute'}, {name:1});
+
+
+
+
+
+
+

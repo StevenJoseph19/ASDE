@@ -1,0 +1,5 @@
+> db.a.find()
+{ "_id" : 1, "x" : 11, "y" : 3 }
+> db.a.update({_id:1},{$unset:{y:0}})
+> db.a.find()
+{ "_id" : 1, "x" : 11 }
