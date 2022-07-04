@@ -11,7 +11,7 @@ import javax.servlet.ServletContext;
 
 import java.util.Locale;
 
-@WebServlet("/")
+@WebServlet("")
 public class HelloServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
