@@ -5,17 +5,22 @@ import employeeService from "../services/employee.service";
 
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+
 
   const init = () => {
+    
     employeeService
       .getAll()
       .then((response) => {
         console.log("Printing employees data", response.data);
         setEmployees(response.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.log("Something went wrong", error);
       });
+     
   };
 
   useEffect(() => {
@@ -34,7 +39,9 @@ const EmployeeList = () => {
         console.log("Something went wrong", error);
       });
   };
-
+  if (isLoading) {
+    return <div className="container">Loading...</div>;
+  }
   return (
     <div className="container">
       <h3>List of Employees</h3>
