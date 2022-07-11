@@ -1,22 +1,26 @@
 package com.mycompany.conference.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mycompany.conference.model.User;
 
+import javax.transaction.Transactional;
+
 
 @Service
-public class UserServiceImpl  {
-	
-//	@Autowired
-//	private UserRepository userRepository;
+public class UserServiceImpl implements UserService {
+
+//    @Autowired
+//    private UserRepository userRepository;
 
 
-//	@Transactional
-	public User save(User user) {
+//    @Override
+//    @Transactional
+    public User save(User user) {
 		return null;
 
-//		return userRepository.save(user);
-	}
+//        return userRepository.save(user);
+    }
 
 }

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mycompany.conference.model.User;
-//import com.mycompany.conference.service.UserService;
+import com.mycompany.conference.service.UserService;
 
 @RestController
 public class UserController {
@@ -28,6 +28,14 @@ public class UserController {
         return user;
     }
 
-   
+//    @PostMapping("/user")
+//    public User postUser(User user) {
+//        System.out.println("User first name: " + user.getFirstname());
+//        userService.save(user);
+//
+//        return user;
+//
+//    }
+
 
 }
