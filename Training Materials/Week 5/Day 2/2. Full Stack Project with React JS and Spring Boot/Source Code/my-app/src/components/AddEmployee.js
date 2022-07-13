@@ -2,11 +2,13 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import employeeService from "../services/employee.service";
+import { toast } from "react-toastify";
 
 const AddEmployee = () => {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [department, setDepartment] = useState("");
+  const [saving, setSaving] = useState(false);
   const history = useHistory();
   const { id } = useParams();
 
@@ -28,13 +30,16 @@ const AddEmployee = () => {
         });
     } else {
       // create
+      setSaving(true);
       employeeService
         .create(employee)
         .then((response) => {
           console.log("Empoyee added successfully", response.data);
+          toast.success("Course saved");
           history.push("/");
         })
         .catch((error) => {
+          setSaving(false);
           console.log("Something went wrong", error);
         });
     }
@@ -91,9 +96,9 @@ const AddEmployee = () => {
           />
         </div>
         <div>
-          <button onClick={(e) => saveEmployee(e)} className="btn btn-primary">
-            Save
-          </button>
+          <button type="submit" disabled={saving}  onClick={(e) => saveEmployee(e)} className="btn btn-primary">
+                {saving ? "Saving..." : "Save"}
+         </button>
         </div>
       </form>
       <hr />

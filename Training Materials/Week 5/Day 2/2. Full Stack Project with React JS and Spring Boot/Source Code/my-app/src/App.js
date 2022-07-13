@@ -4,6 +4,8 @@ import EmployeeList from "./components/EmployeeList";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddEmployee from "./components/AddEmployee";
 import NotFound from "./components/NotFound";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
             <Route path="/employees/edit/:id" component={AddEmployee} />
             <Route path="/*" component={NotFound} />
           </Switch>
+          <ToastContainer autoClose={3000} hideProgressBar />
         </div>
       </div>
     </BrowserRouter>

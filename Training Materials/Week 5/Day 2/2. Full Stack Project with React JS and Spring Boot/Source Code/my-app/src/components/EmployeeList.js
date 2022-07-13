@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import employeeService from "../services/employee.service";
+import Spinner from "../services/Spinner";
 
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
@@ -40,7 +41,7 @@ const EmployeeList = () => {
       });
   };
   if (isLoading) {
-    return <div className="container">Loading...</div>;
+    return <div className="container"><Spinner /></div>;
   }
   return (
     <div className="container">
