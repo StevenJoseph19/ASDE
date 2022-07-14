@@ -38,13 +38,13 @@ public class EmployeeController {
 
 	@PostMapping("/employees")
 	public Employee saveEmployeeDetails(@RequestBody Employee employee) {
-		return eRepo.save(employee);
+		return eRepo.sapublic Employee updateEmployee(@RequestBody Employee employee) {
+			return eRepo.save(employee);
+		}ve(employee);
 	}
 
 	@PutMapping("/employees")
-	public Employee updateEmployee(@RequestBody Employee employee) {
-		return eRepo.save(employee);
-	}
+
 
 	@DeleteMapping("/employees/{id}")
 	public ResponseEntity<HttpStatus> deleteEmployeeById(@PathVariable Long id) {
